@@ -1,2 +1,16 @@
+[project]
+name = "eye-disease-detection-system"
+version = "0.1.0"
+description = "Eye Disease Detection System"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "tensorflow",
+    "numpy",
+    "pillow",
+    "flask",
+    "gunicorn"
+]
+
 [tool.vercel]
-entrypoint = "api/index.py"
+entrypoint = "app.py"
