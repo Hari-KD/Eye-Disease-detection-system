@@ -1,53 +1,53 @@
-# 👁️ Eye Disease Detection System
+# Eye Disease Detection System
 
-An AI-powered medical image classification system that combines a **Convolutional Neural Network (CNN)** built with TensorFlow/Keras and a **Best First Search (BFS)** heuristic decision algorithm for accurate ocular disease detection.
-
----
-
-## 📌 Project Overview
-
-Ocular diseases can lead to severe vision loss if not detected early. This project provides an automated pipeline to analyze eye images and classify them into **Healthy** or **Diseased** categories.
-
-The system utilizes a 3-block Deep Learning CNN to extract visual spatial features from retinal/eye images, followed by a **Best First Search (BFS)** search algorithm that acts as a heuristic decision layer to determine the most probable diagnostic output.
+An AI-powered medical image classification system that combines a Convolutional Neural Network (CNN) built with TensorFlow/Keras and a Best First Search (BFS) heuristic decision algorithm for accurate ocular disease detection.
 
 ---
 
-## 🔄 System Architecture & Flowchart
+## Project Overview
+
+Ocular diseases can lead to severe vision loss if not detected early. This project provides an automated pipeline to analyze eye images and classify them into Healthy or Diseased categories.
+
+The system utilizes a 3-block Deep Learning CNN to extract visual spatial features from retinal and eye images, followed by a Best First Search (BFS) search algorithm that acts as a heuristic decision layer to determine the most probable diagnostic output.
+
+---
+
+## System Architecture & Flowchart
 
 ```mermaid
 flowchart TD
-    A[📷 Input Eye Image] --> B[⚙️ Image Preprocessing]
-    B -->|Resize 128x128 & Rescale 1/255| C[🧠 Convolutional Neural Network]
+    A["Input Eye Image"] --> B["Image Preprocessing"]
+    B --> C["Convolutional Neural Network"]
 
-    subgraph CNN Architecture
-        C --> D[Conv2D 32 Filters + ReLU]
-        D --> E[MaxPooling2D 2x2]
-        E --> F[Conv2D 64 Filters + ReLU]
-        F --> G[MaxPooling2D 2x2]
-        G --> H[Conv2D 128 Filters + ReLU]
-        H --> I[MaxPooling2D 2x2]
-        I --> J[Flatten Layer]
-        J --> K[Dense 128 Units + Dropout 0.5]
-        K --> L[Softmax Output Layer]
+    subgraph CNN["CNN Architecture"]
+        C --> D["Conv2D 32 Filters + ReLU"]
+        D --> E["MaxPooling2D 2x2"]
+        E --> F["Conv2D 64 Filters + ReLU"]
+        F --> G["MaxPooling2D 2x2"]
+        G --> H["Conv2D 128 Filters + ReLU"]
+        H --> I["MaxPooling2D 2x2"]
+        I --> J["Flatten Layer"]
+        J --> K["Dense 128 Units + Dropout 0.5"]
+        K --> L["Softmax Output Layer"]
     end
 
-    L --> M[📊 Raw Prediction Scores]
-    M --> N[🔍 Best First Search Engine]
+    L --> M["Raw Prediction Scores"]
+    M --> N["Best First Search Engine"]
 
-    subgraph Heuristic Decision Engine
-        N --> O[Treat Classes as Search Nodes]
-        O --> P[Evaluate Heuristic Value = Class Score]
-        P --> Q[Greedy Selection of Best Node]
+    subgraph BFS["Heuristic Decision Engine"]
+        N --> O["Treat Classes as Search Nodes"]
+        O --> P["Evaluate Heuristic Value"]
+        P --> Q["Greedy Selection of Best Node"]
     end
 
-    Q --> R{🎯 Final Output}
-    R -->|Highest Score: Healthy| S[🟢 Healthy]
-    R -->|Highest Score: Disease| T[🔴 Disease Detected]
+    Q --> R{"Final Diagnosis"}
+    R -->|Healthy| S["Healthy"]
+    R -->|Disease| T["Disease Detected"]
 ```
 
 ---
 
-## 🛠️ Features & Highlights
+## Features & Highlights
 
 - **Deep Learning Feature Extraction**: 3-stage CNN feature learning with dropout regularization to prevent overfitting.
 - **Best First Search (BFS) Heuristic**: Implements an informed search algorithm to evaluate prediction nodes greedily based on probability heuristics.
@@ -56,7 +56,7 @@ flowchart TD
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```text
 Eye-Disease-detection-system/
@@ -76,7 +76,7 @@ Eye-Disease-detection-system/
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### 1. Prerequisites
 Ensure you have Python 3.8+ installed on your system.
@@ -102,7 +102,7 @@ pip install -r requirements.txt
 
 ---
 
-## 🧪 Running the System
+## Running the System
 
 ### Option A: Generate Synthetic Test Dataset (Quick Test)
 If you don't have a dataset ready, generate sample synthetic images:
@@ -124,7 +124,7 @@ When prompted, enter the path to an image (e.g., `dataset/disease/sample_0.jpg`)
 
 ---
 
-## 🔬 Tech Stack & Dependencies
+## Tech Stack & Dependencies
 
 - **Language**: Python 3.x
 - **Framework**: TensorFlow 2.x / Keras
@@ -133,6 +133,6 @@ When prompted, enter the path to an image (e.g., `dataset/disease/sample_0.jpg`)
 
 ---
 
-## 📜 License
+## License
 
-This project is open-source and available under the [MIT License](LICENSE).
+This project is open-source and available under the MIT License.
