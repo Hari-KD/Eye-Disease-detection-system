@@ -5,12 +5,12 @@ description = "Eye Disease Detection System"
 readme = "README.md"
 requires-python = ">=3.8"
 dependencies = [
-    "tensorflow",
+    "flask",
+    "opencv-python-headless>=4.8.0,<5.0.0",
     "numpy",
     "pillow",
-    "flask",
     "gunicorn"
 ]
 
 [tool.vercel]
-entrypoint = "app.py"
+entrypoint = "api/index.py"
