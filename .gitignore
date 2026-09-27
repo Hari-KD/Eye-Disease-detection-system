@@ -7,13 +7,13 @@ ENV/
 __pycache__/
 *.py[cod]
 
-# VS Code / IDE settings
+# IDE Settings
 .vscode/
 .idea/
 
-# OS metadata
+# OS Metadata
 Thumbs.db
 .DS_Store
 
-# (Optional) Ignore large model weights if you don't want to push binary files:
-# eye_disease_model.h5
+# Temporary split dataset directory
+dataset_split/
