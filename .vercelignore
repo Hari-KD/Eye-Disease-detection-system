@@ -1,0 +1,7 @@
+# Exclude dataset images and virtual environment from Vercel serverless function bundle
+dataset/
+dataset_split/
+.venv/
+.git/
+*.pyc
+__pycache__/
